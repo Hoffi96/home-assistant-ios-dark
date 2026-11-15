@@ -1,0 +1,141 @@
+title: Zuhause
+views:
+  - title: Zuhause
+    path: home
+    icon: mdi:home
+    cards:
+      - type: markdown
+        content: |
+          # Zuhause
+          Übersicht und schnelle Steuerung
+        card_mod:
+          style: |
+            ha-card {
+              background: transparent;
+              border: none;
+              box-shadow: none;
+              padding: 0;
+            }
+
+      - type: horizontal-stack
+        cards:
+          - type: tile
+            entity: sensor.temperature_indoor
+            name: Innen
+            icon: mdi:home-thermometer
+            color: primary
+
+          - type: tile
+            entity: sensor.humidity_indoor
+            name: Luftfeuchte
+            icon: mdi:water-percent
+            color: primary
+
+          - type: tile
+            entity: sensor.outdoor_temperature
+            name: Außen
+            icon: mdi:thermometer
+            color: primary
+
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading: Beleuchtung
+            heading_style: title
+
+          - type: horizontal-stack
+            cards:
+              - type: tile
+                entity: light.living_room
+                name: Wohnzimmer
+                icon: mdi:lightbulb
+                color: primary
+
+              - type: tile
+                entity: light.kitchen
+                name: Küche
+                icon: mdi:lightbulb
+                color: primary
+
+          - type: horizontal-stack
+            cards:
+              - type: tile
+                entity: light.bedroom
+                name: Schlafzimmer
+                icon: mdi:lightbulb
+                color: primary
+
+              - type: tile
+                entity: light.office
+                name: Büro
+                icon: mdi:lightbulb
+                color: primary
+
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading: Szenen
+            heading_style: title
+
+          - type: grid
+            columns: 2
+            square: false
+            cards:
+              - type: tile
+                entity: scene.good_morning
+                name: Guten Morgen
+                icon: mdi:weather-sunny
+                color: warning
+
+              - type: tile
+                entity: scene.movie_night
+                name: Filmabend
+                icon: mdi:movie
+                color: primary
+
+              - type: tile
+                entity: scene.goodnight
+                name: Gute Nacht
+                icon: mdi:weather-night
+                color: primary
+
+              - type: tile
+                entity: scene.leave_home
+                name: Verlassen
+                icon: mdi:door-open
+                color: error
+
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading: System
+            heading_style: title
+
+          - type: horizontal-stack
+            cards:
+              - type: tile
+                entity: sensor.home_assistant_cpu
+                name: CPU
+                icon: mdi:cpu-64-bit
+                color: primary
+
+              - type: tile
+                entity: sensor.home_assistant_memory
+                name: RAM
+                icon: mdi:memory
+                color: primary
+
+          - type: tile
+            entity: binary_sensor.home_assistant_connected
+            name: Home Assistant
+            icon: mdi:home-assistant
+            color: success
+
+      - type: entities
+        title: Wichtige Geräte
+        entities:
+          - binary_sensor.front_door
+          - binary_sensor.motion_hallway
+          - switch.coffee_machine
+          - climate.living_room
+          - media_player.living_room

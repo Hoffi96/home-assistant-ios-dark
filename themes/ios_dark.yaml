@@ -1,0 +1,58 @@
+ios_dark:
+  # iOS-inspirierte Grundfarben
+  primary-color: "#0A84FF"
+  accent-color: "#0A84FF"
+  state-icon-active-color: "#0A84FF"
+
+  # Hintergrund
+  background: "#000000"
+  primary-background-color: "#000000"
+  secondary-background-color: "#000000"
+  card-background-color: "#1C1C1E"
+
+  # Text
+  primary-text-color: "#FFFFFF"
+  secondary-text-color: "#8E8E93"
+  text-primary-color: "#FFFFFF"
+  disabled-text-color: "#6C6C70"
+
+  # Oberflächen
+  divider-color: "#38383A"
+  outline-color: "#38383A"
+  paper-item-background-color: "#1C1C1E"
+  paper-card-background-color: "#1C1C1E"
+  sidebar-background-color: "#000000"
+  app-header-background-color: "#000000"
+  app-header-text-color: "#FFFFFF"
+
+  # Karten
+  ha-card-background: "#1C1C1E"
+  ha-card-border-color: "transparent"
+  ha-card-border-radius: "18px"
+  ha-card-box-shadow: "none"
+  ha-card-padding: "16px"
+
+  # Interaktion
+  primary-color-dark: "#0A84FF"
+  light-primary-color: "#0A84FF"
+  paper-item-selected-background-color: "#1C1C1E"
+  state-icon-color: "#8E8E93"
+  switch-checked-color: "#30D158"
+  switch-unchecked-color: "#48484A"
+  slider-bar-color: "#48484A"
+  slider-main-color: "#0A84FF"
+
+  # Statusfarben
+  success-color: "#30D158"
+  warning-color: "#FF9F0A"
+  error-color: "#FF453A"
+  info-color: "#0A84FF"
+
+  # Typografie
+  primary-font-family: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif"
+  paper-font-common-base: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif"
+  paper-font-common-code: "SF Mono, Menlo, Consolas, monospace"
+  header-font-weight: "600"
+  h1-font-size: "28px"
+  h2-font-size: "22px"
+  h3-font-size: "18px"

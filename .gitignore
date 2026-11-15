@@ -1,0 +1,19 @@
+# Home Assistant
+config/
+.storage/
+.blueprints/
+www/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
