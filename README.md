@@ -1,39 +1,77 @@
-# Home Assistant iOS Dark
+# Home Assistant iOS Liquid Glass
 
-Ein iOS-inspiriertes Dark-Mode-Design für Home Assistant: dunkles Theme, klare Karten, abgerundete Ecken und ein blauer Akzent.
+Ein iOS-inspiriertes **Liquid Glass** Dark-Mode-Design für Home Assistant: tiefes Schwarz, transluzente Karten, Backdrop-Blur, weiche Glasränder und ein blauer Akzent.
+
+## Voraussetzung
+
+Für den vollständigen Liquid-Glass-Effekt wird **[card-mod](https://github.com/thomasloven/lovelace-card-mod)** benötigt. Installiere es über HACS unter **Frontend**.
+
+Ohne card-mod funktioniert das Theme weiterhin, aber die Karten erhalten keinen Backdrop-Blur bzw. keinen Glass-Reflex.
 
 ## Installation
 
-1. Kopiere `themes/ios_dark.yaml` in deinen Home-Assistant-Ordner:
+### Variante 1: HACS
+
+1. Öffne **HACS > drei Punkte > Custom repositories**.
+2. Füge diese Repository-URL hinzu:
+
+   ```text
+   https://github.com/Hoffi96/home-assistant-ios-dark
+   ```
+
+3. Wähle als Kategorie **Theme**.
+4. Installiere **iOS Dark**.
+5. Wähle unter **Benutzerprofil > Theme** das Theme **iOS Dark**.
+
+### Variante 2: Manuell
+
+1. Kopiere `ios_dark.yaml` oder `themes/ios_dark.yaml` nach:
 
    ```text
    /config/themes/ios_dark.yaml
    ```
 
-2. Aktiviere Themes in der `configuration.yaml`:
+2. Ergänze in `configuration.yaml`:
 
    ```yaml
    frontend:
      themes: !include_dir_named themes
    ```
 
-3. Starte Home Assistant neu oder lade die Frontend-Konfiguration über **Entwicklerwerkzeuge > YAML > Frontend-Konfiguration neu laden**.
+3. Lade die Frontend-Konfiguration über **Entwicklerwerkzeuge > YAML** neu.
+4. Wähle **iOS Dark** unter **Benutzerprofil > Theme**.
 
-4. Wähle in Home Assistant unter **Benutzerprofil > Theme** das Theme `iOS Dark`.
+## Dashboard
 
-## Dashboard importieren
+Kopiere den Inhalt aus `lovelace/ios_dark_dashboard.yaml` in den YAML-Editor eines neuen Dashboards.
 
-1. Öffne in Home Assistant **Einstellungen > Dashboards**.
-2. Erstelle ein neues Dashboard und öffne den YAML-Editor.
-3. Kopiere den Inhalt aus `lovelace/ios_dark_dashboard.yaml` hinein.
-4. Passe die Entitäts-IDs an deine Installation an, insbesondere Lichter, Sensoren, Szenen und Medienplayer.
+Passe anschließend die Beispiel-Entitäten an, insbesondere:
 
-## Enthaltene Dateien
+- `sensor.temperature_indoor`
+- `sensor.humidity_indoor`
+- `sensor.outdoor_temperature`
+- `light.living_room`
+- `light.kitchen`
+- `light.bedroom`
+- `light.office`
+- `scene.good_morning`
+- `scene.movie_night`
+- `scene.goodnight`
+- `scene.leave_home`
+- `sensor.home_assistant_cpu`
+- `sensor.home_assistant_memory`
+- `binary_sensor.home_assistant_connected`
 
-- `themes/ios_dark.yaml` — iOS-inspiriertes Dark Theme
-- `lovelace/ios_dark_dashboard.yaml` — Beispiel-Dashboard
-- `.gitignore` — typische Ausschlüsse für Home-Assistant-Projekte
+## Liquid-Glass-Stil
 
-## Hinweis
+- Hintergrund: `#000000`
+- Karten: `rgba(255, 255, 255, 0.08)`
+- Blur: `blur(24px) saturate(180%)`
+- Glasrand: `1px solid rgba(255, 255, 255, 0.14)`
+- Radius: `24px`
+- Akzent: `#0A84FF`
+- Erfolgsgrün: `#30D158`
+- Warnorange: `#FF9F0A`
+- Fehlerrot: `#FF453A`
 
-Das Dashboard verwendet ausschließlich Standard-Home-Assistant-Karten. Damit funktioniert es ohne zusätzliche HACS-Integrationen.
+Der Glass-Effekt wird über eine zentrale `card-mod-card`-Regel auf alle Standard-`ha-card`-Elemente angewendet.
